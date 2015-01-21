@@ -1,0 +1,22 @@
+<polymer-element name="tk-app">
+  <template>
+    <div>
+      <tk-gauge min="-50" max="50" value="{{petrol}}" label="Petrol"></tk-gauge>
+      <tk-gauge min="-50" max="50" value="{{oil}}" label="Oil"></tk-gauge>
+      <tk-gauge min="-50" max="50" value="{{coolant}}" label="Coolant"></tk-gauge>
+    </div>
+    <button class="btn btn-large" on-click="update">Update</button>
+  </template>
+  <script>
+    Polymer('tk-app', {
+      oil: -10,
+      petrol: 20,
+      coolant: 5,
+      update: function() {
+        this.oil = ( Math.random() * 100 ) - 50;
+        this.petrol = ( Math.random() * 100 ) - 50;
+        this.coolant = ( Math.random() * 100 ) - 50;
+      }
+    });
+  </script>
+</polymer-element>

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Highcharts Example</title>
+      <script type="text/javascript" src="../../../razorflow/files/js/jquery.min.js"></script>
+    <!--    <script type="text/javascript" src="../../../Highcharts/js/standalone-framework.js"></script>-->
+		<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
+	<!--	<style type="text/css">
+/*${demo.css}*/
+		</style>-->
+		<script type="text/javascript">
+
+
+
+
+            $(function(){
+
+
+                $('#container').Highcharts({
+                    background: {
+                        //*背景相关*/
+                        type: 'linearGradient',
+                        x0: 0,
+                        y0: 0,
+                        x1: 0,
+                        y1: 1,
+                        colorStops: [{offset: 0, color: '#d2e6c9'},
+                            {offset: 1, color: 'white'}]
+                    },
+
+                    //*图表内容*//*/
+                    title: {text: '各地区2013年督查问题完成情况'},
+                    border: {strokeStyle: '#6ba851'},
+
+                    animation: {duration: 1},
+                    series: [
+                        {
+                            type: 'column',
+                            data: data
+                        }
+                    ]
+                });
+
+            });
+
+
+
+
+
+
+
+
+
+            $(function () {
+
+    $('#container').highcharts(
+            {
+                chart: {
+
+                    type: 'pie',
+                    options3d: {
+                        enabled: true,
+                        alpha: 45,
+                        beta: 0
+                    }
+                },
+                title: {
+                    text: 'Browser market shares at a specific website, 2014'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        depth: 35,
+                        dataLabels: {
+                            enabled: true,
+                            format: '{point.name}'
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: 'Browser share',
+                    data: [
+                        ['Firefox',   45.0],
+                        ['IE',       26.8],
+                        {
+                            name: 'Chrome',
+                            y: 12.8,
+                            sliced: true,
+                            selected: true
+                        },
+                        ['Safari',    8.5],
+                        ['Opera',     6.2],
+                        ['Others',   0.7]
+                    ]
+                }]
+            }
+
+    );
+});
+		</script>
+	</head>
+	<body>
+
+
+<script src="../../js/highcharts.js"></script>
+<script src="../../js/highcharts-3d.js"></script>
+<script src="../../js/modules/exporting.js"></script>
+
+<div id="container" style="height: 400px"></div>
+	</body>
+</html>

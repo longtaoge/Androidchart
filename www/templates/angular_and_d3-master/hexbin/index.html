@@ -1,0 +1,35 @@
+<html ng-app="components">
+<head>
+<script src="lib/angular.js"></script>
+<script src="lib/d3.js"></script>
+<script src="lib/d3.hexbin.v0.min.js"></script>
+<script src="lib/jquery.min.js"></script>
+<script src="custom/hexbin.js"></script>
+<style>
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.hexagon {
+  fill: none;
+  stroke: #000;
+  stroke-width: .5px;
+}
+</style>
+</head>
+<body ng-controller="MyController">
+<div>
+	<input type="range" ng-model="size" min="10" max="160">
+</div>
+<div>
+	<hexbin size="size"></hexbin>
+</div>
+</body>
+</html>

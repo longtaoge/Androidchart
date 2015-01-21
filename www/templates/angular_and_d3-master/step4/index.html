@@ -1,0 +1,17 @@
+<html ng-app="components">
+<head>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/angular.js"></script>
+<script src="custom/gauges.js"></script>
+</head>
+<body ng-controller="MyController">
+<div>
+	<gauge min="-50" max="50" value="values.p" label="Petrol"></gauge>
+	<gauge min="-50" max="50" value="values.o" label="Oil"></gauge>
+	<gauge min="-50" max="50" value="values.c" label="Coolant"></gauge>
+</div>
+<div>
+	<button ng-click="randomize()" style="font-size:x-large;">Randomize</button>
+</div>
+</body>
+</html>

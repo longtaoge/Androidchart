@@ -1,0 +1,33 @@
+<polymer-element name="tk-gauge" attributes="min max value label">
+  <template>
+    <span id="el_gauge"></span>
+  </template>
+  <script>
+    Polymer('tk-gauge', {
+      min: 0,
+      max: 100,
+      value: 50,
+      label: 'Gas',
+      valueChanged: function() {
+        this.gauge.redraw( this.value );
+      },
+      created: function() {
+        var config = {
+          size: 250,
+          label: this.label,
+          min: undefined != this.min ? this.min : 0,
+          max: undefined != this.max ? this.max : 100,
+          minorTicks: 5
+        };
+
+        var range = config.max - config.min;
+        config.yellowZones = [ { from: config.min + range*0.75, to: config.min + range*0.9 } ];
+        config.redZones = [ { from: config.min + range*0.9, to: config.max } ];
+
+        this.gauge = new Gauge( this.$.el_gauge, config );
+        this.gauge.render();
+        this.gauge.redraw( this.value );
+      }
+    });
+  </script>
+</polymer-element>

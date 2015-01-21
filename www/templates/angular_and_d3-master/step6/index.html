@@ -1,0 +1,15 @@
+<html ng-app="components">
+<head>
+<script src="lib/angular.js"></script>
+<script src="lib/d3.js"></script>
+<script src="lib/gauge.js"></script>
+<script src="custom/gauges.js"></script>
+</head>
+<body ng-controller="MyController">
+<div>
+	<gauge min="-50" max="50" value="values.p" label="Petrol" click="set()"></gauge>
+	<gauge min="-50" max="50" value="values.o" label="Oil" click="set()"></gauge>
+	<gauge min="-50" max="50" value="values.c" label="Coolant" click="set()"></gauge>
+</div>
+</body>
+</html>

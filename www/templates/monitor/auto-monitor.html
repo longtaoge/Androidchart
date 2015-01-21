@@ -1,0 +1,76 @@
+<!--
+This template loads for the 'tab.friend-detail' state (app.js)
+'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+The FriendsCtrl pulls data from the Friends service (service.js)
+The Friends service returns an array of friend data
+-->
+<!--<ion-view    >
+  <ion-content class="padding" >
+
+    <h3>自动监控</h3>
+    <p>
+    自动监控页面
+    </p>
+  </ion-content>
+ &lt;!&ndash; <ion-nav-view name="auto-monitor-linechart"></ion-nav-view>
+&ndash;&gt;
+</ion-view>-->
+<ion-side-menus>
+    <!-- Center content -->
+    <div class="bar bar-header bar-positive">
+        <h1 class="title">{{title}}</h1>
+    </div>
+
+    <ion-side-menu-content>  <!--ng-controller="ContentController 内容区 "-->
+
+
+        <!-- 内容部分的指令名-->
+
+        <ion-nav-view name="automonitoritem" style="background-color: #43cc22"></ion-nav-view>
+
+
+        <!--  </div>-->
+        <!-- <div ui-view="tabledata"></div>
+         <div ui-view="graph"></div>-->
+    </ion-side-menu-content>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left" expose-aside-when="large" style="background-color: #009900">
+        <ion-header-bar>
+
+        </ion-header-bar>
+
+
+        <ion-content scroll="false" class="stable-bg">
+
+
+            <ion-list>
+                <ion-item ng-class="{active:curIndex==0}"          href="#monitortabs/automonior/monitoritem"
+                          ng-click="onSelect(leftMenuList[0])">
+                    <div ng-bind="leftMenuList[0].title"></div>
+                </ion-item>
+                <ion-item ng-class="{active:curIndex==1}" href="#/monitortabs/automonior/supervise"
+                          ng-click="onSelect(leftMenuList[1])">
+                    <div ng-bind="leftMenuList[1].title"></div>
+                </ion-item>
+                <ion-item ng-class="{active:curIndex==2}"    href="#/monitortabs/automonior/selfMonitoritem"
+                          ng-click="onSelect(leftMenuList[2])">
+                    <div ng-bind="leftMenuList[2].title"></div>
+                </ion-item>
+                <ion-item ng-class="{active:curIndex==3}"   href="#/monitortabs/automonior/pollutant"
+                          ng-click="onSelect(leftMenuList[3])">
+                    <div ng-bind="leftMenuList[3].title"></div>
+                </ion-item>
+            </ion-list>
+
+
+        </ion-content>
+
+
+    </ion-side-menu>
+
+    <!-- Right menu -->
+    <ion-side-menu side="right">
+        right
+    </ion-side-menu>
+</ion-side-menus>
