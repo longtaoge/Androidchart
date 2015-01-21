@@ -152,8 +152,8 @@ angular.module('starter.controllers', ['ionic'])
         };
     })
     .controller('AutomoniorCtrl', function ($scope) {
-        if($scope.currentitem==undefined){
-            $scope.currentitem="在线监测";
+        if ($scope.currentitem == undefined) {
+            $scope.currentitem = "在线监测";
         }
 
 
@@ -163,14 +163,14 @@ angular.module('starter.controllers', ['ionic'])
         }];
 
         $scope.curIndex = 0;
-         $scope.title="";
+        $scope.title = "";
 
         $scope.onSelect = function (item) {
 
-            $scope.leftMenuList[$scope.curIndex].show=false;
-            $scope.title=item.title;
+            $scope.leftMenuList[$scope.curIndex].show = false;
+            $scope.title = item.title;
             $scope.curIndex = item.id;
-            $scope.leftMenuList[item.id].show=true;
+            $scope.leftMenuList[item.id].show = true;
 
         }
 
@@ -178,62 +178,62 @@ angular.module('starter.controllers', ['ionic'])
     })
     .controller('AutoMonitorLinechart', function ($scope) { /*自动监测*/
 
+        new Highcharts.Chart({
+                chart: {
+                    renderTo: 'container',     //document.getElementById('container'),
+                    height: 400,
+                    type: 'line'
+                },
+                credits: {
+                    // enabled:true,                    // 默认值，如果想去掉版权信息，设置为false即可
+                    text: '',               // 显示的文字
+                    href: 'http://www.ths.com.cn/',   // 链接地址
+                    style: {                            // 样式设置
+                        cursor: 'pointer',
+                        color: 'red',
+                        fontSize: '20px'
+                    }
+                },
 
-            new  Highcharts.Chart({
-                    chart: {
-                        renderTo: 'container',     //document.getElementById('container'),
-                        height: 400,
-                        type: 'line'
-                    },
-                    credits: {
-                        // enabled:true,                    // 默认值，如果想去掉版权信息，设置为false即可
-                        text: '',               // 显示的文字
-                        href: 'http://www.ths.com.cn/',   // 链接地址
-                        style: {                            // 样式设置
-                            cursor: 'pointer',
-                            color: 'red',
-                            fontSize: '20px'
-                        }
-                    },
+                title: {text: 'so2小时均值'},
+                subtitle: {text: '数据来源: 思路创新'},
+                xAxis: {categories: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']},
+                yAxis: {title: {text: '浓度（mg/L）'}},
+                tooltip: {
+                    enabled: false, formatter: function () {
+                        return '<b>' + this.series.name + '</b><br>' + this.x + ': ' + this.y + '°C';
+                    }
+                },
+                plotOptions: {line: {dataLabels: {enabled: true}, enableMouseTracking: false}},
+                series: [{
+                    name: 'so2值',
+                    data: [177, 23, 888, 445, 45, 678, 500, 300, 440, 200, 300, 99, 33, 99, 560, 450, 346, 245, 557, 445, 44, 476, 88, 90]
+                }]
+                // , {name: 'London', data: [33, 99, 560, 450, 346, 245, 557, 445, 44, 476,88, 90]}
 
-                    title: {text: 'so2小时均值'},
-                    subtitle: {text: '数据来源: 思路创新'},
-                    xAxis: {categories: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23']},
-                    yAxis: {title: {text: '浓度（mg/L）'}},
-                    tooltip: {
-                        enabled: false, formatter: function () {
-                            return '<b>' + this.series.name + '</b><br>' + this.x + ': ' + this.y + '°C';
-                        }
-                    },
-                    plotOptions: {line: {dataLabels: {enabled: true}, enableMouseTracking: false}},
-                    series: [{
-                        name: 'so2值',
-                        data: [177, 23, 888, 445, 45, 678, 500, 300, 440, 200, 300, 99, 33, 99, 560, 450, 346, 245, 557, 445, 44, 476, 88, 90]
-                    }]
-                    // , {name: 'London', data: [33, 99, 560, 450, 346, 245, 557, 445, 44, 476,88, 90]}
-
-                }
-            );
-       //  $scope.initchat =function(){ };
+            }
+        );
+        //  $scope.initchat =function(){ };
 
 
-          new Highcharts.Chart(
-              {
-                  chart: {
-                      renderTo: 'container1',     //document.getElementById('container'),
-                      height: 400,
-                      type: 'line'},
+        new Highcharts.Chart(
+            {
+                chart: {
+                    renderTo: 'container1',     //document.getElementById('container'),
+                    height: 400,
+                    type: 'line'
+                },
 
-                  credits: {
-                      // enabled:true,                    // 默认值，如果想去掉版权信息，设置为false即可
-                      text: '思路创新',               // 显示的文字
-                      href: 'http://www.ths.com.cn/',   // 链接地址
-                      style: {                            // 样式设置
-                          cursor: 'pointer',
-                          color: 'red',
-                          fontSize: '20px'
-                      }
-                  },
+                credits: {
+                    // enabled:true,                    // 默认值，如果想去掉版权信息，设置为false即可
+                    text: '思路创新',               // 显示的文字
+                    href: 'http://www.ths.com.cn/',   // 链接地址
+                    style: {                            // 样式设置
+                        cursor: 'pointer',
+                        color: 'red',
+                        fontSize: '20px'
+                    }
+                },
 
                   title: {text: 'so2小时均值'},
                   subtitle: {text: '数据来源: 思路创新'},
@@ -254,14 +254,88 @@ angular.module('starter.controllers', ['ionic'])
                   }]
                   // , {name: 'London', data: [33, 99, 560, 450, 346, 245, 557, 445, 44, 476,88, 90]}
 
-              }
-
-          );
-
+            }
+        );
 
 
     }
 )
+    .controller('PollutantCtrl', function ($scope) { /*污染排放*/
+
+        new Highcharts.Chart(
+            {
+                chart: {
+                    renderTo: 'container2',     //document.getElementById('container'),
+                    height: 400,
+                    type: 'column'
+                },
+                title: {
+                    text: '历年排污情况'
+                },
+                subtitle: {
+                    text: '来源: 思创新'
+                },
+                xAxis: {
+                    categories: [
+                        '重点调查工业企业',
+                        '非重点调查工业企业',
+                        '生活源',
+                        '农业源',
+                        '机动车',
+                        '生活垃圾处理厂',
+                        '危险废物处理厂'
+
+                    ],
+                    labels: {
+                        rotation: -45,
+                        style: {
+                            fontSize: '13px',
+                            fontFamily: 'Verdana, sans-serif'
+                        }
+                    }
+
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Rainfall (mm)'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    color:"#990000",
+                    name: '2011年',
+                    data: [499, 715, 1064, 1292, 1440, 1760, 1356]
+
+                }, {
+                    color:"#008000",
+                    name: '2012年',
+                    data: [836, 788, 985, 934, 1060, 845, 1050]
+
+                }, {
+                    color: "#0000CC",
+                    name: '2013年',
+                    data: [489, 388, 393, 414, 470, 483, 590]
+
+                }]
+            }
+        )
+
+
+    })
 
 
 ;

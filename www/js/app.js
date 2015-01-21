@@ -131,7 +131,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 views: {
                     'automonitoritem': {
                         templateUrl: "templates/monitor/auto-monitor-pollutant-release-chart.html"
-                        // , controller: 'AutoMonitorLinechart'
+                         , controller: 'PollutantCtrl'
 
                     }
                 }
