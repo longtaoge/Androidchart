@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic','starter.controllers', 'starter.services'])
 
     .run(function ($ionicPlatform) {
 
@@ -13,7 +13,7 @@ angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.s
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             //通知
-             //window.plugin.notification.local.add({ message: 'Great app!' });
+          //  window.plugin.notification.local.add({ message: 'Great app!' });
 
             if (window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
@@ -163,6 +163,43 @@ angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.s
 
 
             /***************************************************************/
+
+
+
+
+            /***********socket****************/
+
+
+            .state('monitortabs.socket',{/*自动监测内容区*/
+                url: '/socket',
+              //  abstract: true,
+                views: {
+                    'monitor-socket': {
+                        templateUrl: "templates/socket/sockettabs.html"
+
+                    }
+                }
+            })
+
+            .state('socket',{/*自动监测内容区*/
+                url: '/socket',
+            //    abstract: true,
+                templateUrl: "templates/monitor/monitor-tabs.html"
+
+              /*  views: {
+                    'monitor-socket': {
+                        templateUrl: "templates/socket/sockettabs.html",
+
+                    }
+                }*/
+            })
+
+        /***********socket****************/
+
+
+
+
+
 
             .state('tab.account', {
                 url: '/account',

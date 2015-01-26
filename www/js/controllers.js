@@ -151,7 +151,7 @@ angular.module('starter.controllers', ['ionic'])
             enableFriends: true
         };
     })
-    .controller('AutomoniorCtrl', function ($scope, $cordovaLocalNotification) {
+    .controller('AutomoniorCtrl', function ($scope) {
         if ($scope.currentitem == undefined) {
             $scope.currentitem = "在线监测";
         }
@@ -160,7 +160,12 @@ angular.module('starter.controllers', ['ionic'])
         $scope.leftMenuList = [{title: "在线监测", id: 0}, {title: "监督性监测", id: 1}, {title: "自行监测", id: 2}, {
             title: "污染排放",
             id: 3
-        }];
+        }
+
+        ];
+
+
+
 
         $scope.curIndex = 0;
         $scope.title = "";
