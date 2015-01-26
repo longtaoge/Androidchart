@@ -151,7 +151,7 @@ angular.module('starter.controllers', ['ionic'])
             enableFriends: true
         };
     })
-    .controller('AutomoniorCtrl', function ($scope) {
+    .controller('AutomoniorCtrl', function ($scope, $cordovaLocalNotification) {
         if ($scope.currentitem == undefined) {
             $scope.currentitem = "在线监测";
         }
@@ -172,9 +172,12 @@ angular.module('starter.controllers', ['ionic'])
             $scope.curIndex = item.id;
             $scope.leftMenuList[item.id].show = true;
 
-        }
+        };
+        alert("start");
+       // window.plugin.notification.local.add({ message: 'Great app!' });
+      // $cordovaLocalNotification.add({ message: 'Great app!' });
 
-
+        alert("end");
     })
     .controller('AutoMonitorLinechart', function ($scope) { /*自动监测*/
 
