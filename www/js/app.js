@@ -170,28 +170,42 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services'])
             /***********socket****************/
 
 
-            .state('monitortabs.socket',{/*自动监测内容区*/
-                url: '/socket',
-              //  abstract: true,
-                views: {
-                    'monitor-socket': {
-                        templateUrl: "templates/socket/sockettabs.html"
+            .state('tabchat', {
+                url: "/tabchat",
+                abstract: true,
+                templateUrl: "templates/tabchat/tabs.html",
+                controller: 'ParentCtrl'
+            })
 
+
+            .state('tabchat.chat', {
+                url: '/chat',
+                views: {
+                    'tab-chat': {
+                        templateUrl: 'templates/tabchat/tab-chat.html',
+                        controller: 'ChatCtrl'
                     }
                 }
             })
 
-            .state('socket',{/*自动监测内容区*/
-                url: '/socket',
-            //    abstract: true,
-                templateUrl: "templates/monitor/monitor-tabs.html"
-
-              /*  views: {
-                    'monitor-socket': {
-                        templateUrl: "templates/socket/sockettabs.html",
-
+            .state('tabchat.people', {
+                url: '/people',
+                views: {
+                    'tab-people': {
+                        templateUrl: 'templates/tabchat/tab-people.html',
+                        controller: 'PeopleCtrl'
                     }
-                }*/
+                }
+            })
+
+            .state('tabchat.account', {
+                url: '/account',
+                views: {
+                    'tab-account': {
+                        templateUrl: 'templates/tabchat/tab-account.html',
+                        controller: 'AccountACtrl'
+                    }
+                }
             })
 
         /***********socket****************/
@@ -243,7 +257,7 @@ angular.module('starter', ['ionic','starter.controllers', 'starter.services'])
         // if none of the above states are matched, use this as the fallback
         // monitortabs/automonior/monitoritem
 
-
+        //$urlRouterProvider.otherwise('/tabchat/chat'); //聊天
         $urlRouterProvider.otherwise('monitortabs/automonior/monitoritem');//tab/friends
 
     });
