@@ -178,11 +178,11 @@ angular.module('starter.controllers', ['ionic'])
             $scope.leftMenuList[item.id].show = true;
 
         };
-        alert("start");
+        //alert("start");
        // window.plugin.notification.local.add({ message: 'Great app!' });
       // $cordovaLocalNotification.add({ message: 'Great app!' });
 
-        alert("end");
+        //alert("end");
     })
     .controller('AutoMonitorLinechart', function ($scope) { /*自动监测*/
 
